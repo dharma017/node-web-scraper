@@ -1,0 +1,42 @@
+extends layout
+
+block content
+  .container
+    .starter-template
+      
+      h1 #{title}
+
+      table.table.table-hover
+        thead
+          tr
+            th #
+            th Traded Companies
+            th No. Of Transactions
+            th Max Price
+            th Min Price
+            th Closing Price
+            th Traded Shares
+            th Amount
+            th Previous Closing
+            th Difference Rs.
+        tbody
+          each val,index in todaysPriceData
+            tr
+                th(scope='row')= index+1
+                td= val['Traded Companies']
+                td= val['No. Of Transactions']
+                td= val['Max Price']
+                td= val['Min Price']
+                td= val['Closing Price']
+                td= val['Traded Shares']
+                td= val['Amount']
+                td= val['Previous Closing']
+                td= val['Difference Rs.']
+
+      //- p.lead.
+      //-   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      //-   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      //-   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      //-   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      //-   cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      //-   proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
