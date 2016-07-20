@@ -26,10 +26,10 @@ router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Contact' , path: req.path});
 });
 
-// Scraping Nepal Stock real time data
+// Get Scraping Nepal Stock real time data in json file
 router.get('/scrape', function(req, res, next) {
 
-    url = 'http://www.nepalstock.com.np/todaysprice/export/';
+      url = 'http://www.nepalstock.com.np/todaysprice/export/';
 
       var json = {};
 
