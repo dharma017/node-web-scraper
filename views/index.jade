@@ -4,7 +4,10 @@ block content
   .container
     .starter-template
       
-      h1 #{title}
+      h1 Nepal Stock Today's Price #{title}
+
+      p.lead.
+        #{new Date()}          
 
       table.table.table-hover
         thead
@@ -19,8 +22,10 @@ block content
             th Amount
             th Previous Closing
             th Difference Rs.
+            th
         tbody
           each val,index in todaysPriceData
+            - var difference = val['Difference Rs.']
             tr
                 th(scope='row')= index+1
                 td= val['Traded Companies']
@@ -31,12 +36,9 @@ block content
                 td= val['Traded Shares']
                 td= val['Amount']
                 td= val['Previous Closing']
-                td= val['Difference Rs.']
-
-      //- p.lead.
-      //-   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      //-   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      //-   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      //-   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      //-   cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      //-   proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                td= difference 
+                td
+                    if difference>0
+                      span.class.glyphicon.glyphicon-menu-up
+                    else
+                      span.class.glyphicon.glyphicon-menu-down
