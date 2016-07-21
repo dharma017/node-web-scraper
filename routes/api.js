@@ -4,7 +4,7 @@ var router = express.Router();
 var fs = require('fs');
 
 /* GET todaysprice nepse listing. */
-router.get('/todaysprice', function(req, res, next) {
+router.get('/nepalstock/todaysprice', function(req, res, next) {
   	// res.json({ message: 'hooray! welcome to our api!' });   
 
 	/*fs.readFile('./output.json', 'utf8', function (err, data) {

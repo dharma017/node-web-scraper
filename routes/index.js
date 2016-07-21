@@ -27,7 +27,7 @@ router.get('/contact', function(req, res, next) {
 });
 
 // Get Scraping Nepal Stock real time data in json file
-router.get('/scrape', function(req, res, next) {
+router.get('/nepalstock/scrape', function(req, res, next) {
 
       url = 'http://www.nepalstock.com.np/todaysprice/export/';
 
